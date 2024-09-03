@@ -1,23 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:food_recipe/utils/constants/color_constants.dart';
 import 'package:food_recipe/utils/constants/image_constants.dart';
+import 'package:food_recipe/view/bottom_nav_screen/bottomnavbar_screen.dart';
 
 class OnboardingScreen extends StatelessWidget {
   const OnboardingScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Stack(children: [
-        //first section - for building background image
-        _buildBackGroundImage(),
-        //second section - for building gradient section
-        _buildGradientSection()
-      ]),
+    return SafeArea(
+      child: Scaffold(
+        body: Stack(children: [
+          //first section - for building background image
+          _buildBackGroundImage(),
+          //second section - for building gradient section
+          _buildGradientSection(context),
+          //third section - create header
+          _buildHeaderSection(),
+        ]),
+      ),
     );
   }
 
-  Positioned _buildGradientSection() {
+  Positioned _buildGradientSection(BuildContext context) {
     return Positioned(
       bottom: 0,
       left: 0,
@@ -55,31 +60,40 @@ class OnboardingScreen extends StatelessWidget {
             SizedBox(
               height: 40,
             ),
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 32, vertical: 16),
-              decoration: BoxDecoration(
-                color: ColorConstants.PRIMARY_COLOR,
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    "Start Cooking",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w500,
-                        fontSize: 16),
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Icon(
-                    Icons.arrow_forward,
-                    color: Colors.white,
-                    size: 20,
-                  )
-                ],
+            InkWell(
+              onTap: () {
+                Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => BottomnavbarScreen(),
+                    ));
+              },
+              child: Container(
+                padding: EdgeInsets.symmetric(horizontal: 32, vertical: 16),
+                decoration: BoxDecoration(
+                  color: ColorConstants.PRIMARY_COLOR,
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Start Cooking",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w500,
+                          fontSize: 16),
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Icon(
+                      Icons.arrow_forward,
+                      color: Colors.white,
+                      size: 20,
+                    )
+                  ],
+                ),
               ),
             )
           ],
@@ -94,6 +108,56 @@ class OnboardingScreen extends StatelessWidget {
           image: DecorationImage(
               fit: BoxFit.cover,
               image: AssetImage(ImageConstants.ONBOARDING_SCREEN_BG))),
+    );
+  }
+}
+
+class _buildHeaderSection extends StatelessWidget {
+  const _buildHeaderSection({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Positioned(
+      top: 13,
+      left: 0,
+      right: 0,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(
+            Icons.star,
+            color: Colors.white,
+          ),
+          SizedBox(
+            width: 10,
+          ),
+          // Text(
+          //   "data",
+          //   style: TextStyle(
+          //     color: Colors.white,
+          //   ),
+          // ),
+          RichText(
+              text: TextSpan(
+                  text: "60k+",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 16,
+                  ),
+                  children: [
+                TextSpan(
+                    text: " Premium recipes",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16,
+                      fontWeight: FontWeight.normal,
+                    ))
+              ]))
+        ],
+      ),
     );
   }
 }
