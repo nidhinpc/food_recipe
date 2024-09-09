@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:food_recipe/view/onboarding_screen/onboarding_screen.dart';
+
+import 'package:food_recipe/view/splash_screen/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: OnboardingScreen(),
+      home: SplashScreen(),
     );
   }
 }
