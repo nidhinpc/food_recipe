@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_recipe/view/bookmark_screen/bookmark_screen.dart';
+import 'package:food_recipe/view/create_recipe_screen/create_recipescreen.dart';
 import 'package:food_recipe/view/home_screen/home_screen.dart';
 
 class BottomnavbarScreen extends StatefulWidget {
@@ -27,7 +28,13 @@ class _BottomnavbarScreenState extends State<BottomnavbarScreen> {
     return Scaffold(
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         floatingActionButton: FloatingActionButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => CreateRecipescreen(),
+                ));
+          },
           child: Icon(Icons.add),
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),

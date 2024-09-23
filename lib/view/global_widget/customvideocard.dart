@@ -29,7 +29,7 @@ class customvideocard extends StatelessWidget {
     return InkWell(
       onTap: onCardTaped,
       child: SizedBox(
-        width: 280,
+        width: 300,
         child: Column(
           children: [
             Container(
@@ -108,38 +108,41 @@ class customvideocard extends StatelessWidget {
                 ],
               ),
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  tittle,
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600,
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    tittle,
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600,
+                    ),
                   ),
-                ),
-                Icon(Icons.more_horiz)
-              ],
+                  Icon(Icons.more_horiz)
+                ],
+              ),
             ),
-            SizedBox(
-              height: 8,
-            ),
-            Row(
-              children: [
-                CircleAvatar(
-                  radius: 16,
-                  // backgroundImage: AssetImage(ImageConstants.AVATHARNIKKI),
-                  backgroundImage: NetworkImage(profileurl),
-                ),
-                SizedBox(
-                  width: 8,
-                ),
-                Text(
-                  username,
-                  style: TextStyle(color: ColorConstants.lightGrey),
-                )
-              ],
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                children: [
+                  CircleAvatar(
+                    radius: 16,
+                    // backgroundImage: AssetImage(ImageConstants.AVATHARNIKKI),
+                    backgroundImage: NetworkImage(profileurl),
+                  ),
+                  SizedBox(
+                    width: 8,
+                  ),
+                  Text(
+                    username,
+                    style: TextStyle(color: ColorConstants.lightGrey),
+                  )
+                ],
+              ),
             )
           ],
         ),

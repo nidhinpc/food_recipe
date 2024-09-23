@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_recipe/utils/constants/image_constants.dart';
 import 'package:food_recipe/view/onboarding_screen/onboarding_screen.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -29,8 +30,7 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       backgroundColor: Colors.blueAccent,
       body: Center(
-        child:
-            Image(image: AssetImage("android/assets/images/splash_screen.png")),
+        child: Image(image: AssetImage(ImageConstants.LOGO_BG)),
       ),
     );
   }

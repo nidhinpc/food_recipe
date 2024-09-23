@@ -114,7 +114,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   SizedBox _videoplayerSection() {
     return SizedBox(
-      width: 280,
+      width: double.infinity,
       height: 256,
       child: ListView.separated(
           padding: EdgeInsets.symmetric(horizontal: 0),
@@ -130,10 +130,11 @@ class _HomeScreenState extends State<HomeScreen> {
                           recipetitle: DummyDb.trendingNowList[index]["tittle"],
                           image: DummyDb.trendingNowList[index]["imageurl"],
                           rating: DummyDb.trendingNowList[index]["rating"],
+                          username: DummyDb.trendingNowList[index]["username"],
                         ),
                       ));
                 },
-                width: 280,
+                width: double.infinity,
                 rating: DummyDb.trendingNowList[index]["rating"],
                 duration: DummyDb.trendingNowList[index]["duration"],
                 profileurl: DummyDb.trendingNowList[index]["profileurl"],
