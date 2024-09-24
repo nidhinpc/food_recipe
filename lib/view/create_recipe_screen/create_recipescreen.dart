@@ -96,7 +96,8 @@ class CreateRecipescreen extends StatelessWidget {
                   width: double.infinity,
                   child: IngridientSection(
                     gram: "01",
-                    image: "https://via.placeholder.com/17x15",
+                    image:
+                        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRH_W7T3sd6l-YMYHKS4RapoaSMOVAMLWXxlQ&s",
                     name: "Serves",
                     haveArrow: true,
                   ),
@@ -109,7 +110,8 @@ class CreateRecipescreen extends StatelessWidget {
                   width: double.infinity,
                   child: IngridientSection(
                     gram: "45 Min",
-                    image: "https://via.placeholder.com/17x15",
+                    image:
+                        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRH_W7T3sd6l-YMYHKS4RapoaSMOVAMLWXxlQ&s",
                     name: "Eggs",
                     haveArrow: true,
                   ),

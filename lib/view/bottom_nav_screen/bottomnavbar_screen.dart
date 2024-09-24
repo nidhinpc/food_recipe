@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:food_recipe/view/bookmark_screen/bookmark_screen.dart';
 import 'package:food_recipe/view/create_recipe_screen/create_recipescreen.dart';
 import 'package:food_recipe/view/home_screen/home_screen.dart';
+import 'package:food_recipe/view/myProfile_Screen/myprofile_screen.dart';
 
 class BottomnavbarScreen extends StatefulWidget {
   const BottomnavbarScreen({super.key});
@@ -18,9 +19,7 @@ class _BottomnavbarScreenState extends State<BottomnavbarScreen> {
     Container(
       color: Color.fromARGB(255, 1, 57, 154),
     ),
-    Container(
-      color: Color.fromARGB(255, 30, 188, 83),
-    )
+    MyprofileScreen()
   ];
 
   @override

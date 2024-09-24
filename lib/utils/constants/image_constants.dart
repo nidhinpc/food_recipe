@@ -5,4 +5,6 @@ class ImageConstants {
       "android/assets/images/unsplash_sFdbI7P47XE.png";
   static const String LOGO_BG = "android/assets/images/pngwing.com.png";
   static const String CreateRecipe = "android/assets/images/image14.png";
+  static const String Profilepic =
+      "android/assets/images/unsplash_Nsze2HlxoZo.png";
 }
