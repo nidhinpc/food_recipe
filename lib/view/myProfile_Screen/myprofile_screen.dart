@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:food_recipe/utils/constants/color_constants.dart';
-import 'package:food_recipe/utils/constants/image_constants.dart';
 
 class MyprofileScreen extends StatelessWidget {
   const MyprofileScreen({super.key});
