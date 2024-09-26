@@ -99,7 +99,7 @@ class _HomeScreenState extends State<HomeScreen> {
               padding: EdgeInsets.symmetric(horizontal: 20),
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) => PopularCategoryCard(
-                    imageurl: DummyDb.popularCategoryList[index]['image'],
+                    imageurl: DummyDb.popularCategoryList[index]["image"],
                     title: DummyDb.popularCategoryList[index]['title'],
                     duration: DummyDb.popularCategoryList[index]['duration'],
                   ),

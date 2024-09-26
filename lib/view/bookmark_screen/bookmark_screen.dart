@@ -15,30 +15,40 @@ class BookmarkScreen extends StatelessWidget {
       child: SafeArea(
         child: Scaffold(
           appBar: AppBar(
-              title: Text(
-                "Saved recipes",
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
-              ),
-              bottom: TabBar(
-                  indicatorColor: ColorConstants.PRIMARY_COLOR,
-                  unselectedLabelColor: ColorConstants.PRIMARY_COLOR,
-                  indicatorSize: TabBarIndicatorSize.tab,
-                  labelColor: ColorConstants.mainWhite,
-                  tabs: [
-                    Tab(
-                      height: 34,
-                      text: "Video",
+            title: Text(
+              "Saved recipes",
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
+            ),
+            bottom: TabBar(
+                //isScrollable: true,
+                //tabAlignment: TabAlignment.start,
+                labelColor: Colors.white,
+                unselectedLabelColor: ColorConstants.PRIMARY_COLOR,
+                indicatorSize: TabBarIndicatorSize.tab,
+                // indicatorColor: Colors.red,
+                indicator: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                    color: ColorConstants.PRIMARY_COLOR),
+                dividerColor: Colors.transparent,
+                tabs: [
+                  Tab(
+                    child: Text(
+                      "Video",
                     ),
-                    Tab(
-                      height: 34,
-                      text: "Recipe",
-                    )
-                  ])),
-          body: TabBarView(
-            children: [
-              _buid_videoCard(),
-              _buildRecipeCard(),
-            ],
+                  ),
+                  Tab(
+                    child: Text("Reciepe"),
+                  ),
+                ]),
+          ),
+          body: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 10),
+            child: TabBarView(
+              children: [
+                _buid_videoCard(),
+                _buildRecipeCard(),
+              ],
+            ),
           ),
         ),
       ),

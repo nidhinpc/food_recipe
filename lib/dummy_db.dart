@@ -113,41 +113,43 @@ class DummyDb {
   ];
   static List popularCategoryList = [
     {
-      "image": "assets/image/Pepper.jpeg",
+      "image":
+          "https://images.pexels.com/photos/115740/pexels-photo-115740.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "title": "Pepper Sweetcorn Ramen",
       "duration": "10 Mins"
     },
     {
-      "image": "assets/image/ChickenCurry.jpeg",
+      "image":
+          "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "title": "Spicy Chicken Curry",
-      "duration": "25 Mins"
-    },
-    {
-      "image": "assets/image/PastaBolognese.jpeg",
-      "title": "Pasta Bolognese",
-      "duration": "15 Mins"
-    },
-    {
-      "image": "assets/image/VeggiePizza.jpeg",
-      "title": "Veggie Supreme Pizza",
       "duration": "30 Mins"
     },
     {
-      "image": "assets/image/SushiRolls.jpeg",
-      "title": "California Sushi Rolls",
+      "image":
+          "https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "title": "Grilled Salmon",
+      "duration": "25 Mins"
+    },
+    {
+      "image":
+          "https://images.pexels.com/photos/769289/pexels-photo-769289.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "title": "Vegetable Stir Fry",
+      "duration": "15 Mins"
+    },
+    {
+      "image":
+          "https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "title": "Beef Tacos",
       "duration": "20 Mins"
     },
     {
-      "image": "assets/image/GrilledSalmon.jpeg",
-      "title": "Grilled Salmon with Lemon",
-      "duration": "20 Mins"
-    },
-    {
-      "image": "assets/image/AvocadoToast.jpeg",
-      "title": "Avocado Toast",
-      "duration": "5 Mins"
+      "image":
+          "https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "title": "Classic Burger",
+      "duration": "15 Mins"
     }
   ];
+
   static List IngridientList = [
     {
       "image":
