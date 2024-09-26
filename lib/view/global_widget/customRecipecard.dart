@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_recipe/utils/constants/color_constants.dart';
-//import 'package:food_recipe/utils/constants/image_constants.dart';
 
-class customvideocard extends StatelessWidget {
+class CustomRecipecard extends StatelessWidget {
   double width;
   String rating;
   String imageurl;
@@ -12,7 +11,7 @@ class customvideocard extends StatelessWidget {
   String duration;
   String username;
 
-  customvideocard({
+  CustomRecipecard({
     required this.width,
     required this.profileurl,
     required this.rating,
@@ -32,8 +31,8 @@ class customvideocard extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              padding: EdgeInsets.all(8),
               height: 200,
+              padding: EdgeInsets.all(8),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   image: DecorationImage(
@@ -42,9 +41,10 @@ class customvideocard extends StatelessWidget {
                       //     "https://images.pexels.com/photos/1099680/pexels-photo-1099680.jpeg"),
                       image: NetworkImage(imageurl))),
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Container(
                         padding:
@@ -56,6 +56,7 @@ class customvideocard extends StatelessWidget {
                           color: ColorConstants.lightBlack.withOpacity(.3),
                         ),
                         child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Icon(
                               Icons.star,
@@ -72,37 +73,29 @@ class customvideocard extends StatelessWidget {
                           ],
                         ),
                       ),
-                      Spacer(),
                       CircleAvatar(
                         backgroundColor: ColorConstants.mainWhite,
-                        child: Icon(Icons.bookmark_outline),
+                        child: Icon(
+                          Icons.more_horiz,
+                          color: Colors.red,
+                        ),
                       ),
                     ],
                   ),
-                  CircleAvatar(
-                    backgroundColor: ColorConstants.lightBlack.withOpacity(.3),
-                    child: Icon(
-                      Icons.play_arrow,
-                      color: ColorConstants.mainWhite,
-                    ),
+                  Spacer(),
+                  Text(
+                    "How to make Italian\nSpanghetti at home",
+                    style: TextStyle(
+                        color: ColorConstants.mainWhite,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16),
                   ),
-                  Align(
-                    alignment: Alignment.bottomRight,
-                    child: Container(
-                        padding:
-                            EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                        height: 28,
-                        width: 48,
-                        child: Text(
-                          duration,
-                          style: TextStyle(
-                              color: ColorConstants.mainWhite,
-                              fontWeight: FontWeight.normal,
-                              fontSize: 12),
-                        ),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            color: ColorConstants.lightBlack.withOpacity(.3))),
+                  Text(
+                    "12 Ingredients | 40 min",
+                    style: TextStyle(
+                        color: ColorConstants.mainWhite,
+                        fontWeight: FontWeight.normal,
+                        fontSize: 12),
                   ),
                 ],
               ),

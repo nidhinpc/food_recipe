@@ -1,27 +1,110 @@
 import 'package:flutter/material.dart';
+import 'package:food_recipe/dummy_db.dart';
 import 'package:food_recipe/utils/constants/color_constants.dart';
+
+import 'package:food_recipe/view/global_widget/customRecipecard.dart';
+import 'package:food_recipe/view/global_widget/custom_tab.dart';
+import 'package:food_recipe/view/global_widget/customvideocard.dart';
+import 'package:food_recipe/view/recipe_details/recipe_details.dart';
 
 class MyprofileScreen extends StatelessWidget {
   const MyprofileScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          "My profile",
-          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+    return DefaultTabController(
+      length: 2,
+      initialIndex: 1,
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text(
+            "My profile",
+            style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+          ),
+          actions: [Icon(Icons.more_horiz)],
         ),
-        actions: [Icon(Icons.more_horiz)],
-      ),
-      body: Column(
-        children: [
-          _build_ProfileimageSection(),
-          _build_dataSection(),
-          Divider(),
-        ],
+        body: Column(
+          children: [
+            _build_ProfileimageSection(),
+            _build_dataSection(),
+            Divider(),
+            Custom_tab(),
+            Expanded(
+              child: TabBarView(
+                children: [
+                  _build_videocard(),
+                  _buid_customRecipe(),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
+  }
+
+  ListView _build_videocard() {
+    return ListView.separated(
+        padding: EdgeInsets.symmetric(horizontal: 20),
+        itemBuilder: (context, index) => customvideocard(
+              onCardTaped: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => RecipeDetails(
+                        profileurl: DummyDb.trendingNowList[index]
+                            ["profileurl"],
+                        recipetitle: DummyDb.trendingNowList[index]["tittle"],
+                        image: DummyDb.trendingNowList[index]["imageurl"],
+                        rating: DummyDb.trendingNowList[index]["rating"],
+                        username: DummyDb.trendingNowList[index]["username"],
+                      ),
+                    ));
+              },
+              width: double.infinity,
+              rating: DummyDb.trendingNowList[index]["rating"],
+              duration: DummyDb.trendingNowList[index]["duration"],
+              profileurl: DummyDb.trendingNowList[index]["profileurl"],
+              imageurl: DummyDb.trendingNowList[index]["imageurl"],
+              username: DummyDb.trendingNowList[index]["username"],
+              tittle: DummyDb.trendingNowList[index]["tittle"],
+            ),
+        separatorBuilder: (context, index) => SizedBox(
+              height: 16,
+            ),
+        itemCount: DummyDb.trendingNowList.length);
+  }
+
+  ListView _buid_customRecipe() {
+    return ListView.separated(
+        padding: EdgeInsets.symmetric(horizontal: 20),
+        itemBuilder: (context, index) => CustomRecipecard(
+              onCardTaped: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => RecipeDetails(
+                        profileurl: DummyDb.trendingNowList[index]
+                            ["profileurl"],
+                        recipetitle: DummyDb.trendingNowList[index]["tittle"],
+                        image: DummyDb.trendingNowList[index]["imageurl"],
+                        rating: DummyDb.trendingNowList[index]["rating"],
+                        username: DummyDb.trendingNowList[index]["username"],
+                      ),
+                    ));
+              },
+              width: double.infinity,
+              rating: DummyDb.trendingNowList[index]["rating"],
+              duration: DummyDb.trendingNowList[index]["duration"],
+              profileurl: DummyDb.trendingNowList[index]["profileurl"],
+              imageurl: DummyDb.trendingNowList[index]["imageurl"],
+              username: DummyDb.trendingNowList[index]["username"],
+              tittle: DummyDb.trendingNowList[index]["tittle"],
+            ),
+        separatorBuilder: (context, index) => SizedBox(
+              height: 236,
+            ),
+        itemCount: DummyDb.trendingNowList.length);
   }
 
   Widget _build_dataSection() {
