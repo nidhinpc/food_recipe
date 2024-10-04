@@ -10,8 +10,6 @@ class Custom_tab extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: TabBar(
-          // isScrollable: true,
-          //tabAlignment: TabAlignment.start,
           labelColor: Colors.white,
           unselectedLabelColor: ColorConstants.PRIMARY_COLOR,
           indicatorSize: TabBarIndicatorSize.tab,
