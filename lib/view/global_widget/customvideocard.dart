@@ -29,11 +29,14 @@ class customvideocard extends StatelessWidget {
     return InkWell(
       onTap: onCardTaped,
       child: SizedBox(
+        height: 254,
+        width: 280,
         child: Column(
           children: [
             Container(
               padding: EdgeInsets.all(8),
-              height: 200,
+              height: 180,
+              width: 280,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   image: DecorationImage(
@@ -125,7 +128,7 @@ class customvideocard extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: EdgeInsets.only(left: 8, top: 2),
               child: Row(
                 children: [
                   CircleAvatar(
